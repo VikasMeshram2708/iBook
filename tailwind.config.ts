@@ -8,6 +8,12 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  theme: {
+    fontFamily: {
+      Anta: ['Anta', 'sans-serif'],
+      Poppins: ['Poppins', 'sans-serif'],
+    },
+  },
   plugins: [require('daisyui')],
   daisyui: {
     themes: ['light', 'dark', 'black'],
