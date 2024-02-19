@@ -1,9 +1,14 @@
+'use client';
+
+import { signIn, signOut, useSession } from 'next-auth/react';
+import Image from 'next/image';
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import Link from 'next/link';
 import React from 'react';
 
 export default function Navbar() {
+  const { status, data } = useSession();
   return (
     <nav className="navbar border-b-2 min-h-[8vh] shadow-[#8ff0a4] bg-base-100 font-Poppins">
       <div className="navbar-start">
@@ -66,12 +71,59 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <button type="button" className="p-[3px] relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-          <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-            Sign In
+        {status === 'unauthenticated' && (
+          <button
+            onClick={() => signIn('google')}
+            type="button"
+            className="p-[3px] relative"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+            <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+              Sign In
+            </div>
+          </button>
+        )}
+        {status === 'authenticated' && (
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar"
+            >
+              <div className="w-10 rounded-full">
+                <Image
+                  width={500}
+                  height={500}
+                  alt={data.user?.name!}
+                  src={data.user?.image!}
+                />
+              </div>
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-300 text-[#8ff0a4] rounded-box w-52"
+            >
+              <li>
+                <Link href="/" className="justify-between">
+                  Profile
+                  <span className="badge">New</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">Settings</Link>
+              </li>
+              <li>
+                <Link
+                  href="/"
+                  onClick={() => signOut()}
+                  className="btn btn-sm rounded-md btn-error text-white"
+                >
+                  Logout
+                </Link>
+              </li>
+            </ul>
           </div>
-        </button>
+        )}
       </div>
     </nav>
   );
