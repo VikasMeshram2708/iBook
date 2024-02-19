@@ -74,11 +74,11 @@ export default function Navbar() {
           Borders are cool
         </Button> */}
         <button className="p-[3px] relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-        <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-          Sign In
-        </div>
-      </button>
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+          <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+            Sign In
+          </div>
+        </button>
         {/* <Link
           href="/"
           className="px-4 py-2 sm:text-[1.2rem] border-2 border-[#8ff0a4] rounded-md font-semibold textGreen hover:bg-[#8ff0a4] hover:text-black"
