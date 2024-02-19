@@ -1,15 +1,15 @@
 'use client';
 
-import PrivacyContent from '@/app/components/privacy/PrivacyContent';
+import ContactContent from '@/app/components/contact/ContactContent';
 import { SparklesCore } from '@/app/components/ui/sparkles';
 import React from 'react';
 
-export default function Privacy() {
+export default function Contact() {
   return (
     <>
       <div className="h-[40rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
         <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20">
-          Privacy Policy
+          Contact Us
         </h1>
         <div className="w-[40rem] h-40 relative">
           {/* Gradients */}
@@ -33,10 +33,8 @@ export default function Privacy() {
         </div>
       </div>
 
-      {/* Contect section */}
-      <div className="max-w-7xl mx-auto">
-        <PrivacyContent />
-      </div>
+      {/* Contact Content Section */}
+      <ContactContent />
     </>
   );
 }

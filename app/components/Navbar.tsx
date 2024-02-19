@@ -32,7 +32,7 @@ export default function Navbar() {
               <Link href="/about">About</Link>
             </li>
             <li>
-              <Link href="/contact">Contact</Link>
+              <Link href="/pages/contact">Contact</Link>
             </li>
             <li>
               <Link href="/pages/privacy">Privacy Policy</Link>
@@ -54,7 +54,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="/contact" className="sm:text-[.99rem]">
+            <Link href="/pages/contact" className="sm:text-[.99rem]">
               Contact
             </Link>
           </li>
