@@ -3,22 +3,22 @@ import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
-  const isPublicPath = path === '/pages/dashboard';
-  const cookieStore = request.cookies.get('next-auth.session-token')?.value || '';
+  const isPubliPath = path === '/' || path === '/home';
 
-  if (isPublicPath && cookieStore) {
-    return NextResponse.rewrite(new URL('/pages/dashboard', request.url));
+  const cookieStore =
+    request.cookies.get('next-auth.session-token')?.value || '';
+
+  if (isPubliPath && cookieStore) {
+    return NextResponse.redirect(new URL('/', request.nextUrl));
   }
-  if (isPublicPath && !cookieStore) {
-    return NextResponse.redirect(new URL('/pages/contact', request.url));
+
+  if (!isPubliPath && !cookieStore) {
+    return NextResponse.redirect(new URL('/pages/contact', request.nextUrl));
   }
-  if (!isPublicPath && !cookieStore) {
-    return NextResponse.rewrite(new URL('/', request.url));
-  }
-  return NextResponse.rewrite(new URL('/', request.url));
+
+  return NextResponse.next();
 }
 
-// See "Matching Paths" below to learn more
 export const config = {
-  matcher: '/pages/dashboard',
+  matcher: ['/', '/pages/dashboard'],
 };

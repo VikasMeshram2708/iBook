@@ -1,6 +1,7 @@
 'use client';
 import { signIn, useSession } from 'next-auth/react';
 import { TypewriterEffectSmooth } from '../ui/typewriter-effect';
+
 export function Hero() {
   const { status, data } = useSession();
   const words = [
@@ -63,9 +64,6 @@ export function Hero() {
             <span className="uppercase font-bold mx-2">{data.user.name}</span>
           </button>
         )}
-        {/* <button className="w-40 h-10 rounded-md sm:text-[.95rem] sm:font-semibold bg-white text-black border border-black  text-sm">
-          Signup
-        </button> */}
       </div>
     </div>
   );

@@ -6,7 +6,7 @@
     "next/core-web-vitals"
   ],
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.json",
   },
   "rules": {
     "import/prefer-default-export": 0
