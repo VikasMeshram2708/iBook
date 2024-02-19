@@ -53,7 +53,11 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('daisyui'), addVariablesForColors],
+  plugins: [
+    require('daisyui'),
+    addVariablesForColors,
+    require('@tailwindcss/typography'),
+  ],
   daisyui: {
     themes: ['light', 'dark', 'black'],
   },
