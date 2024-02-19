@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import Link from 'next/link';
 import React from 'react';
+import { Button } from './ui/moving-border';
 
 export default function Navbar() {
   return (
@@ -66,12 +67,24 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link
+        {/* <Button
+          borderRadius="1.75rem"
+          className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+        >
+          Borders are cool
+        </Button> */}
+        <button className="p-[3px] relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+        <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+          Lit up borders
+        </div>
+      </button>
+        {/* <Link
           href="/"
           className="px-4 py-2 sm:text-[1.2rem] border-2 border-[#8ff0a4] rounded-md font-semibold textGreen hover:bg-[#8ff0a4] hover:text-black"
         >
           Sign In
-        </Link>
+        </Link> */}
       </div>
     </nav>
   );
