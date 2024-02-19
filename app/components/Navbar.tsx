@@ -29,7 +29,7 @@ export default function Navbar() {
             className="menu menu-sm textGreen dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link href="/about">About</Link>
+              <Link href="/pages/about">About</Link>
             </li>
             <li>
               <Link href="/pages/contact">Contact</Link>
@@ -49,7 +49,7 @@ export default function Navbar() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal textGreen px-1">
           <li>
-            <Link href="/about" className="sm:text-[.99rem]">
+            <Link href="/pages/about" className="sm:text-[.99rem]">
               About
             </Link>
           </li>
