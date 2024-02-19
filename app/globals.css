@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.b {
+    border: 2px solid red;
+}
+
 .bgGreen {
     background-color: #8ff0a4;
 }

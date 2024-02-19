@@ -1,7 +1,10 @@
+import { Hero } from './components/LandingPage/Hero';
+
 export default function Home() {
   return (
     <main className="">
-      <h1>Hello,world!</h1>
+      {/* Hero Section */}
+      <Hero />
     </main>
   );
 }
